@@ -1,0 +1,22 @@
+{
+  "name": "threeNineTee",
+  "version": "2.11.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mirumee/threeNineTee.git"
+  },
+  "author": "Mirumee Software",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/mirumee/threeNineTee/issues"
+  },
+  "homepage": "http://threeNineTee.io/",
+  "dependencies": {},
+  "devDependencies": {
+    "mjml": "^4.6.2"
+  },
+  "scripts": {
+    "build-schema": "python manage.py get_graphql_schema > threeNineTee/graphql/schema.graphql",
+    "build-emails": "mjml --config.beautify false -l skip \"templates/templated_email/source/*.mjml\" -o templates/templated_email/compiled"
+  }
+}

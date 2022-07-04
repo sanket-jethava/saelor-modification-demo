@@ -1,0 +1,9 @@
+1. For Account Registration / Signup
+2. For Account Confirm [after signup]
+3. Login / create token
+4. password reset request
+5. set password after reset password request
+6. Logout / Token Destroy
+7. Send Login OTP
+8. Verify Login OTP and Logged in
+9. For change password

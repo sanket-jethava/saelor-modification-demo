@@ -1,0 +1,5 @@
+1. For Profile Setup of B2B
+2. For Business Details of B2B
+3. For B2B Interested
+4. For B2B sub user details
+5. For B2B sub user checkout

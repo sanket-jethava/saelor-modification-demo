@@ -1,0 +1,62 @@
+---------1. For B2B sub users--------------
+query{
+	b2bSubUsers{
+    firstName
+    email
+    companyName
+	}
+}
+
+---------2. For B2B Profile Setup--------------
+query{
+profileSetup(uid:"U3ViVXNlckRldGFpbDo3NA=="){
+id
+companyName
+contactPerson
+panNumber
+gstNumber
+social{
+facebookLink
+instagramLink
+twitterLink
+}
+}
+}
+
+---------3. For B2B sub user details--------------
+query{
+subUserDetails(uid:"U3ViVXNlckRldGFpbDo3NA=="){
+id
+firstName
+lastName
+countryCode
+phonenumber
+dateOfBirth
+email
+companyName
+contactPerson
+panNumber
+gstNumber
+social{
+facebookLink
+instagramLink
+twitterLink
+}
+}
+}
+
+---------4. For B2B Business details--------------
+query{
+businessDetails(uid:"U3ViVXNlckRldGFpbDo3NA=="){
+id
+companyName
+contactPerson
+panNumber
+gstNumber
+social{
+facebookLink
+instagramLink
+twitterLink
+}
+}
+}

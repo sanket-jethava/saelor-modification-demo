@@ -1,0 +1,73 @@
+-------------1. For fetch all active job details--------
+query alljobs{
+  jobsDetails{
+    id
+    jobTitle
+    requiredExperience
+  }
+} 
+-------------2. For fetch particular active job details--------
+query job{
+  jobDetail(jobId:"Sm9iczox"){
+    id
+    jobTitle
+    requiredExperience
+    jobDescription
+    postDate
+  }
+}
+-------------3. For fetch all active blogs details--------
+query blogdetails{
+  blogsDetails{
+    id
+    blogCoverImage
+    title
+    postDate
+  }
+}
+-------------4. For fetch particular active blog details--------
+query blogdetail{
+  blogDetail(blogId:"QmxvZ3M6MQ=="){
+    id
+    blogCoverImage
+    title
+    description
+    postDate
+  }
+}
+-------------5. For fetch particular user checkout address --------
+query checkoutAddresses {
+  checkoutAddresses(uid: "VXNlckRldGFpbDoyNQ==") {
+    id
+    firstName
+    phone
+    streetAddress1
+    postalCode
+    isBilling
+    shippingId {
+      id
+    }
+    typeOfAddress
+  }
+}
+-------------6. For fetch particular user shipping address --------
+query checkoutAddress{
+  checkoutAddress(uid:"Q2hlY2tvdXRBZGRyZXNzOjk="){
+    id
+    firstName
+    streetAddress1
+    city
+    postalCode
+    country
+    phone
+    state
+    isBilling
+    shippingId{
+      id
+      firstName
+      streetAddress1
+      city
+    }
+    typeOfAddress
+  }
+}

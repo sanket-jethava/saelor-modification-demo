@@ -1,0 +1,6 @@
+1. For fetch all active job details
+2. For fetch particular active job details
+3. For fetch all active blogs details
+4. For fetch particular active blog details
+5. For fetch particular user checkout address
+6. For fetch particular user shipping address

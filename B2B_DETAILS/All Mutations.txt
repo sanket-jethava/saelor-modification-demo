@@ -1,0 +1,124 @@
+---------1. For Profile Setup of B2B --------------
+mutation{
+	businessProfileSetup(input: {
+	companyName: "Digital Beri"
+    contactPerson: "Dhiraj"
+    panNumber: "123456"
+    gstNumber: "123456abcd"
+    facebookLink: "dhirajberi"
+    instagramLink: "dhirajberi"
+    twitterLink: "dhirajberi"
+})
+{
+	message
+}
+}
+
+---------2. For Business Details of B2B --------------
+mutation{
+	businessDetails(input: {
+	companyName: "Digital Beri"
+    contactPerson: "Dhiraj"
+    panNumber: "123456"
+    gstNumber: "123456abcd"
+    facebookLink: "dhirajberi"
+    instagramLink: "dhirajberi"
+    twitterLink: "dhirajberi"
+})
+{
+	message
+}
+}
+
+
+---------3. For B2B Interested--------------
+mutation{
+    interestB2b(input: {
+    firstName:"Dhiraj"
+    lastName:"Beri"
+    countryCode:"91"
+    phonenumber:"9824844576"
+    email:"dhiraj@gmail.com"
+    dateOfBirth:"1997-03-12"
+    gender:"male"
+    facebookLink:"sanku"
+    twitterLink:"sanku"
+    instagramLink:"sanku"
+
+    companyName:"yudiz"
+    contactPerson:"ayazbhai"
+    companyPhoneCode:"91"
+    companyPhone:"09090909109"
+
+    companyCountry: "Ind"
+    companyState:"Guj"
+    companyCity:"Meh"
+    companyZipcode:"384002"
+})
+{
+message
+}
+}
+
+---------3. For Add new B2B sub user--------------
+
+mutation{
+  addSubUser(input:{
+    firstName:"Dhiraj",
+    lastName:"Beri"
+    countryCode: "91"
+    phonenumber:"1211111",
+    dateOfBirth:"1996-08-10",
+    email:"dhiraj@yopmail.com",
+    companyName:"Company1",
+    contactPerson:"Mitesh",
+    panNumber:"BYKPII568",
+    gstNumber:"454566789",
+    facebookLink:"dhiraj"
+    instagramLink:"dhiraj",
+  	twitterLink:"dhiraj",
+    defaultShippingAddress: "35 simandhar soc",
+    country: "IN",
+    zipcode:"380050",
+  	city:"Ahmedabad",
+  	state:"Gujarat"
+  }){
+    message
+  }
+}
+
+---------4. For B2B sub user details--------------
+
+mutation{
+  subUserDetail(input:{
+    avatar:"image.jpeg"
+    firstName:"Roby"
+  	lastName:"B"
+    phonenumber:"88833"
+    dateOfBirth:"1996-04-21"
+  	email:"harshi@yopmail.com"
+    companyName:"mycompany"
+    contactPerson:"RV"
+    panNumber:"yuio789"
+    gstNumber:"122334"
+    facebookLink:"qwer"
+    instagramLink:"wwwwwww"
+    twitterLink:"wedrftg"
+  })
+  {
+    message
+  }
+}
+
+---------5. For B2B sub user checkout--------------
+mutation{
+  subUserCheckout(input:{
+    selectSubuser:1
+    quantity:4
+    applyPromoCode:"bc",
+    applyToken:"1200"
+  })
+  {
+    message
+  }
+}

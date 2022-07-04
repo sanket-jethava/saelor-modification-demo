@@ -1,0 +1,1261 @@
+---------1. For Add User --------------
+
+mutation{
+  addUser(input:{
+    phonenumber:"9998887776",
+    countryCode:"+91",
+    firstName:"Customer1",
+    lastName:"User1",
+    dateOfBirth:"1998-10-03",
+    email:"blindhelper2020@gmail.com",
+    password:"Customer@123"
+    redirectUrl:"http://localhost:3000/account-confirm/"
+  })
+  {
+    user{
+      email
+      firstName
+      
+    }
+  }
+}
+---------2.For Add B2B User --------------
+mutation{
+  addB2buser(input:{
+    firstName:"Dhiraj",
+    lastName:"Beri",
+    phonenumber:"7738889996",
+    countryCode:"+91",
+    dateOfBirth:"1998-10-03",
+    email:"digitalberi@gmail.com",
+    packageId:1,
+    password:"Dhiraj@123",
+    note:"Faadu aadmi",
+    redirectUrl:"http://localhost:3000/account-confirm/"
+  }){
+    user{
+      email
+    }
+  }
+}
+---------3. For add artist --------------
+mutation{
+  addArtist(input:{
+    phonenumber:"3366985214",
+    countryCode:"+91",
+    firstName:"Ayaz",
+    lastName:"Saiyed",
+    dateOfBirth:"1998-10-03",
+    email:"ayazahemad.s@yudiz.in",
+    password:"Ayazbhai@123",
+    redirectUrl:"http://localhost:3000/account-confirm/"
+  })
+  {
+     user{
+      email
+      firstName
+    }
+  }
+}
+---------4. For manage B2B user request --------------
+mutation{
+  manageB2bUserRequest(input:{
+    isB2buser:true, #true for accept and false for decline request
+    email:"sanket.j@itindia.co.in"
+  }){
+    message
+  }
+}
+
+---------5. For Create new package for B2B user--------------
+mutation{
+  packageCreate(input:
+  {
+    title:"Package 1",
+    description:"This is my first package.",
+    amount:50000,
+    documentLink:"Link is here"
+  })
+  {
+    message
+  }
+}
+
+---------6. For delete B2B user --------------
+mutation{
+  deleteB2bUser(input:{
+    email:"digitalberi@gmail.com"
+  }){
+    message
+  }
+}
+
+---------7. For delete B2C user --------------
+mutation{
+  deleteB2cUser(input:{
+    email:"blindhelper2021@gmail.com"
+  }){
+    message
+  }
+}
+---------8. For delete Artist user --------------
+mutation{
+  deleteArtistUser(input:{
+    email:"sanket.j@itindia.co.in"
+  }){
+    message  
+  }
+}
+---------9. For Delete Package by package name --------------
+mutation{
+  deletePackage(input:{
+    productTitle:"Package 2"
+  }){
+    message
+  }
+}
+---------10. For create new marketing banner --------------
+mutation{
+  BannerCreate(input:{
+    bannerImage:"banner1.jpg",
+    title:"First banner",
+    subTitle:"This is my first banner.",
+    description:"First banner for marketing purpose."
+  }){
+    message
+  }
+}
+---------11. For delete marketing banner --------------
+mutation{
+  DeleteBanner(input:{
+    title:"Second banner"
+  }){
+    message
+  }
+}
+---------12. For change banner status --------------
+mutation{
+  ChangeBannerStatus(input:{
+    title:"First banner",
+    status:true
+  }){
+    message
+  }
+}
+---------13. For add new promotion banner --------------
+mutation{
+  PromotionBannerCreate(input:{
+    bannerImage:"promobanner1.jpg",
+    title:"Promotion Banner 1",
+    fromDate:"2021-06-15",
+    toDate:"2021-06-20"
+  }){
+    message
+  }
+}
+---------14. For delete promotion banner --------------
+mutation{
+  DeletePromotionBanner(input:{
+    title:"first promotion banner"
+  }){
+    message
+  }
+}
+---------15. For change promotion banner status --------------
+
+mutation{
+  PromotionBannerStatusChange(input:{
+    title:"Promotion Banner 1",
+    status:true
+  }){
+    message
+  }
+}
+---------16. For create new blog --------------
+mutation{
+  BlogCreate(input:{
+    blogCoverImage:"firstblogcover.jpg",
+    title:"first blog",
+    description:"This is my first blog."
+  }){
+    message
+  }
+}
+---------17. For delete blog --------------
+mutation{
+  DeleteBlog(input:{
+    title:"second blog"
+  }){
+    message
+  }
+}
+---------18. For change status of blog --------------
+mutation{
+  BlogStatusChange(input:{
+    title:"first blog",
+    status:false
+  }){
+    message
+  }
+}
+---------19. For edit blog --------------
+mutation{
+ BlogUpdate(input:{
+  blogCoverImage:"firstcover1.jpg",
+  newTitle :"First Blog",
+  oldTitle:"first blog",
+  description:"This is blog 1."
+}){
+  message
+}
+}
+---------20. For create a new job --------------
+mutation{
+  JobCreate(input:{
+    requiredExperience:"1-2 Years",
+    jobTitle:"Python Developer",
+    jobDescription:"Best"
+  }){
+    message
+  }
+}
+---------21. For delete a job --------------
+mutation{
+  DeleteJob(input:{
+    title:"Python Developer (Django)"
+  }){
+    message
+  }
+}
+---------22. For update a job --------------
+mutation{
+  JobUpdate(input:{
+    requiredExperience:"0-6 Months",
+    oldTitle:"Python Developer",
+    newTitle:" Python ML Developer",
+    description:"We need Python ML developer."
+  }){
+    message
+  }
+}
+---------23. For accept and reject job application --------------
+mutation{
+  JobApplicatonAction(input:{
+    email:"sj@gmail.com",
+    status:true
+  }){
+    message
+  }
+}
+---------24. For add new category --------------
+mutation {
+  categoryCreate(
+    input: {
+      description: "This is my first product category"
+      descriptionJson: "{}"
+      name: "Men T-shirt"
+      slug: "MenTshirt"
+    }
+    parent: 53
+  ) {
+    category {
+      name
+    }
+  }
+}
+---------25. For create new warehouse --------------
+
+mutation{
+  createWarehouse(input:{
+    slug:"GondalGuj1"
+    companyName:"Yudiz1"
+    name:"Gondal Sub Head dept."
+    address:{
+      streetAddress1:"Bhavnath"
+      streetAddress2:"Gondal"
+      city:"Gondal"
+      cityArea:"Remote"
+      postalCode:"360311"
+      country:IN
+      countryArea:"Gujarat"
+      phone:"7896325410"
+    }
+    
+  }){
+    warehouse{
+      id
+      name
+    }
+  }
+}
+---------26. For category delete --------------
+mutation{
+  categoryDelete(id:"Q2F0ZWdvcnk6NTY="){
+    category{
+      name
+    }
+    productErrors{
+      message
+    }
+  }
+}
+
+---------27. For category update --------------
+
+mutation {
+  categoryUpdate(id:"Q2F0ZWdvcnk6NTQ=",input:{
+   description:"This is my first product category"
+   descriptionJson:"{}"
+   name:"Men T-shirt"
+   slug:"MenTshirt"
+   seo:{
+    title:"First"
+    description:"FP"
+  }
+    backgroundImage:""
+    backgroundImageAlt:""
+  }){
+    category{
+      name
+    }
+  }
+}
+---------28. For update warehouse details--------------
+mutation{
+  updateWarehouse(id:"V2FyZWhvdXNlOmIwMTU0MDNjLTg5ZTQtNGVjNS1iYWNlLWFhMDgyYTU0ZDQ5Nw==",
+    input:{
+      companyName:"Yudiz Solution Pvt. Ltd."
+      slug:"YudizSolutions"
+      name:"Yudiz's Powerhouse"
+     address:{
+        streetAddress1:"near Iskon"
+        streetAddress2:"B-square II"
+        city:"Ahmedabad"
+        cityArea:"Remote"
+        postalCode:"360311"
+        country:IN
+        countryArea:"Gujarat"
+        phone:"7896325411"
+      }
+    }){
+    warehouse{
+      id
+      name
+      companyName
+    }
+  }
+}
+---------29. For create product type--------------
+mutation{
+  productTypeCreate(input:{
+    name:"Cotton"
+    slug:"Cotton"
+    hasVariants:true
+    isShippingRequired:true
+    isDigital:false
+    weight:200
+    taxCode:"sdd"
+  }){
+    productType{
+      id
+      name
+    }
+  }
+}
+---------30. For add new attribute from admin --------------
+mutation {
+    attributeCreate(input:{inputType:TEXT,
+    slug:"grid"
+    name:"colo"
+    attributeCode:"s123"
+    valueRequired:false
+    visibleInStorefront:true
+    filterableInDashboard:true
+    filterableInStorefront:true
+    availableInGrid:true
+})
+  {
+      message
+      attribute{
+      id
+      name
+
+
+      }
+  }
+}
+---------31. For add new attribute value  --------------
+  mutation {
+  attributeValueCreate(input:{
+    name:"old"
+    code:"#fffff"
+    value:"red view"
+  },
+  attribute:"QXR0cmlidXRlOjEy") #this id will returned from (25. For add new attribute from admin)
+  {
+    attributeValue{
+      id
+    }
+  }
+}
+---------32. For update(edit) attribute from admin  --------------
+mutation {
+  attributeUpdate(input:
+  {
+    name:"gray"
+    slug:"gray"
+  },
+  id:"QXR0cmlidXRlOjEy")
+  {
+  message
+  }
+}
+---------33. For update(edit) attribute value  --------------
+mutation c1 {
+  attributeValueUpdate(input:{
+    name:"small"
+    value:"blue view"
+    code:"#0000"
+  },
+  id:"QXR0cmlidXRlVmFsdWU6OA==") #id of attribute value to be updated
+  {
+    attributeValue{
+      id
+    }
+  }
+}
+---------34. For delete attribute   --------------
+mutation {
+  attributeDelete(id:"QXR0cmlidXRlOjE0"){
+    attribute{
+      id
+      name
+    }
+  }
+}
+------------35. For delete attribute value------------------
+mutation {
+  attributeValueDelete(id:"QXR0cmlidXRlVmFsdWU6MTI="){
+    attributeValue{
+      id
+      name
+    }
+  }
+}
+------------36. For add new product ------------------------
+For add new product [use Bottom up approach for execute mutations]
+mutation pvc {
+  productVariantCreate(
+    input: {
+      attributes: { id: "QXR0cmlidXRlOjIx", values: "attr0512" }
+      costPrice: 321.0
+      price: 350.0
+      sku: "Prod_1256colorred"
+      trackInventory: true
+      weight: 20.0
+      color:"Red"
+      size:"xl"
+      region:"asia"
+      product: "UHJvZHVjdDo4"
+      stocks: {
+        warehouse: "V2FyZWhvdXNlOmVlNGRjZGQwLTNiYzQtNDcwZi1iZGMzLWY3NjQwZWMyYzU5Zg=="
+        quantity: 2000
+      }
+    }
+  ) {
+    productVariant {
+      id
+      name
+      sku
+      product {
+        id
+        name
+        slug
+      }
+    }
+    productErrors {
+      message
+      field
+    }
+  }
+}
+(Step 5)
+query ware{
+  warehouses(first:100){
+    pageInfo{
+       hasNextPage
+    }
+    edges{
+      node{
+        id
+        name
+        slug
+      }
+    }
+  }
+}
+
+(Step : 4)
+mutation pc {
+  productCreate(
+    input: {
+      attributes: { id: "QXR0cmlidXRlOjIx", values: "attr051" } #id= Attribute id -step 1
+      publicationDate: "2021-06-24"
+      category: "Q2F0ZWdvcnk6NTk="
+      chargeTaxes: true
+      collections: "Q29sbGVjdGlvbjoy"
+      description: "abc"
+      descriptionJson: "{}"
+      isPublished: true
+      name: "ABC1"
+      slug: "abc12345"
+      taxCode: "abc1"
+      seo: { title: "abc", description: "abc" }
+      weight: 20.0
+      sku: "ABC_123456789"
+      trackInventory: true
+      basePrice: 321.0
+      visibleInListings: true
+      productType: "UHJvZHVjdFR5cGU6MTY=" #productType id - Step 2
+      stocks: {
+        warehouse: "V2FyZWhvdXNlOmVlNGRjZGQwLTNiYzQtNDcwZi1iZGMzLWY3NjQwZWMyYzU5Zg=="
+        quantity: 2000
+      }
+    }
+  ) {
+    product {
+      id
+      name
+    }
+    productErrors {
+      message
+    }
+  }
+}
+(Step : 3 Optional - when you will be not assign attribute in productAttributes in step 2)
+mutation as {
+  attributeAssign(
+    productTypeId: "UHJvZHVjdFR5cGU6MTU="
+    operations: [{ id: "QXR0cmlidXRlOjIw", type: PRODUCT }]
+  ) {
+    productErrors {
+      message
+      field
+    }
+    productErrors {
+      message
+      field
+    }
+    productType {
+      name
+      id
+    }
+  }
+}
+(Step : 2)
+mutation ptc {
+  productTypeCreate(
+    input: {
+      name: "Digital Product1"
+      hasVariants: false
+      isShippingRequired: false
+      isDigital: true
+      productAttributes: ["QXR0cmlidXRlOjIx"] # id of attribute which is created at step 1
+    }
+  ) {
+    productType {
+      id
+      name
+    }
+  }
+}
+(Step : 1)
+mutation ac {
+  attributeCreate(
+    input: {
+      name: "attr0512"
+      values: { name: "attr0512", code: "attr512", value: "qwe512" }
+    }
+  ) {
+    attribute {
+      id
+      name
+    }
+    message
+  }
+}
+------------37. For create a new collection ------------------------
+mutation {
+  collectionCreate(
+    input: {
+      name: "monsoon"
+      slug: "monsoon"
+      isPublished: true
+      backgroundImage: "dont know"
+      publicationDate: "2021-03-14"
+      description: "summer collection"
+      products: ["UHJvZHVjdDoy", "UHJvZHVjdDoz", "UHJvZHVjdDoy"]
+    }
+  ) {
+    collection {
+      id
+      name
+    }
+    productErrors {
+      message
+      field
+    }
+  }
+}
+------------38. For update collection ------------------------
+mutation {
+  collectionUpdate(id: "Q29sbGVjdGlvbjo5", input: { name: "updated" }) {
+    productErrors {
+      message
+    }
+    collection {
+      id
+      name
+    }
+  }
+}
+------------39. For delete collection ------------------------
+mutation cd {
+  collectionDelete(id: "Q29sbGVjdGlvbjo5") {
+    collection {
+      id
+      name
+    }
+  }
+}
+------------40.For add product to collection ------------------------
+mutation acc {
+  collectionAddProducts(
+    collectionId: "Q29sbGVjdGlvbjoxMg=="
+    products: ["UHJvZHVjdDo0"]
+  ) {
+    collection {
+      id
+      name
+      products {
+        totalCount
+      }
+    }
+    productErrors {
+      message
+      field
+    }
+  }
+}
+------------41. For delete product from collection ------------------------
+mutation  {
+  collectionRemoveProducts(
+    collectionId: "Q29sbGVjdGlvbjoxMg=="
+    products: ["UHJvZHVjdDo0"]
+  ) {
+    collection {
+      id
+      name
+    }
+    productErrors {
+      message
+      field
+    }
+  }
+}
+------------42. For assign product image with product ------------------------
+mutation productimageassign{
+  productImageCreate(input:{
+    alt:"abcd",
+    image:"abcd.jpg"
+    product:"UHJvZHVjdDo2"
+  }){
+    image{
+      id
+      alt
+    }
+    product{
+      id
+      name
+    }
+  }
+}
+------------43. For update product image with product ------------------------
+mutation productimageupdate{
+  productImageUpdate(id:"UHJvZHVjdEltYWdlOjM=",input:{
+    alt:"QWER"
+  }){
+    image{
+      alt
+    }
+  }
+}
+------------44. For delete product image with product ------------------------
+mutation productimagedelete{
+  productImageDelete(id:"UHJvZHVjdEltYWdlOjU="){
+    product{
+      images{
+        id
+        alt
+        url
+      }
+    }
+  }
+}
+------------45. For assign variant image with product ------------------------
+mutation variantImageAssign{
+  variantImageAssign(imageId:"UHJvZHVjdEltYWdlOjc=",
+  variantId:"UHJvZHVjdFZhcmlhbnQ6MQ=="){
+    productVariant{
+      id
+      name
+      images{
+        id
+        alt
+        url
+      }
+    }
+  }
+}
+------------46. For unassign variant image with product ------------------------
+mutation variantImageUnassign{
+  variantImageUnassign(imageId:"UHJvZHVjdEltYWdlOjg=",
+  variantId:"UHJvZHVjdFZhcmlhbnQ6MQ=="){
+    productVariant{
+      id
+      images{
+        id
+        alt
+        url
+      }
+    }
+  }
+}
+------------47. For update product details ------------------------
+mutation productupdate{
+  productUpdate(id:"UHJvZHVjdDo2",input:{
+    name:"XYZABC"
+    attributes:[]
+    publicationDate:""
+    sku:""
+    basePrice:""
+    visibleInListings:false
+    trackInventory:true
+    weight:""
+    seo:{title:"XYZABC"
+    description:""}
+    taxCode:""
+    slug:"XYZABC"
+    category:""
+    chargeTaxes:true
+    collections:[]
+    description:""
+    descriptionJson:"{}"
+    isPublished:true
+  }){
+    product{
+      id
+      name
+    }
+  }
+}
+------------48. For delete product ------------------------
+mutation productdelete{
+  productDelete(id:"UHJvZHVjdDo2"){
+    product{
+      id
+      name
+    }
+  }
+}
+------------49. For create voucher ------------------------
+mutation cv {
+  voucherCreate(
+    input: {
+      categories: ["Q2F0ZWdvcnk6Mw=="]
+      type: ENTIRE_ORDER
+      name: "for delete"
+      code: "new100"
+      status:true
+      startDate: "2020-01-02T22:08:12.510696" #use ISO time (ISO 8601)
+      endDate: "2020-02-02T22:08:12.510696"
+      discountValueType: FIXED
+      discountValue: 40
+      actualPrice:150
+      products: ["UHJvZHVjdDoz", "UHJvZHVjdDoy"]
+      collections: ["Q29sbGVjdGlvbjoxMw==", "Q29sbGVjdGlvbjoxNA=="]
+      minCheckoutItemsQuantity: 1
+      maxCheckoutItemsQuantity: 15
+      applyOncePerCustomer: true
+    }
+  ) {
+    voucher {
+      id
+      name
+    }
+    discountErrors {
+      message
+      field
+    }
+  }
+}
+------------50. For update voucher ------------------------
+mutation vu {
+  voucherUpdate(
+    id: "Vm91Y2hlcjo2"
+    input: {
+      type: SHIPPING
+      name: "newone"
+      code: "newone"
+      status:true
+      startDate: "2020-02-02T22:08:12.510696" #use ISO time (ISO 8601)
+      endDate: "2020-03-02T22:08:12.510696"
+      products: ["UHJvZHVjdDoy"]
+      collections: ["Q29sbGVjdGlvbjo4"]
+      categories: ["Q2F0ZWdvcnk6Mg=="]
+      discountValueType: PERCENTAGE
+      discountValue: 30
+      actualPrice:150
+      minCheckoutItemsQuantity: 1
+      maxCheckoutItemsQuantity: 20
+      # applyOncePerCustomer:true
+    }
+  ) {
+    voucher {
+      id
+      name
+    }
+    discountErrors {
+      message
+      field
+    }
+  }
+}
+
+------------51. For delete voucher ------------------------
+mutation vd {
+  voucherDelete(id: "Vm91Y2hlcjo2") {
+    voucher {
+      id
+      name
+    }
+    discountErrors {
+      field
+      message
+    }
+  }
+}
+------------52. Add Catalog to Voucher(Add products, Add Category ,Add Collection) ------------------------
+mutation vac{
+  voucherCataloguesAdd(id:"Vm91Y2hlcjo1",input:{
+    products:["UHJvZHVjdDo3"]
+    categories:["Q2F0ZWdvcnk6Mw=="]
+    collections:["Q29sbGVjdGlvbjoxMw=="]
+  })
+  {
+    voucher {
+      id
+      name
+      products(first:100){
+        edges{
+          node{
+            id
+            name
+          }
+        }
+      }
+    }
+    discountErrors {
+      message
+      field
+    }
+  }
+}
+------------53. Remove Catalog to Voucher(Remove products, Remove Category ,Remove Collection) ------------------------
+mutation vacd{
+  voucherCataloguesRemove(id:"Vm91Y2hlcjo1",input:{
+    products:["UHJvZHVjdDo3"]
+    # categories:[""]
+    # collections:[""]
+  })
+  {
+    voucher {
+      id
+      name
+    }
+    discountErrors {
+      message
+      field
+    }
+  }
+}
+------------54. For create staff user ------------------------
+mutation staffusercreate{
+  StaffUserCreate(input:{
+    addPermissions:[MANAGE_USERS,MANAGE_STAFF]
+    email:"sanket1.j@itindia.co.in"
+    firstName:"sanket"
+    lastName:"Jethava"
+    phoneNumber:"0099886655"
+    password:"Sanket@123"
+  }){
+    message
+  }
+}
+------------55. For update staff user profile details ------------------------
+mutation updatestaffdetails{
+  StaffUserUpdate(input:{
+    email:"sanket1.j@itindia.co.in"
+    firstName:"SANKET"
+    lastName:"JETHAVA"
+    avatar:"abcde.jpg"
+    address:"GONDAL"
+  }){
+    message
+  }
+}
+------------56. For update staff user permission------------------------
+mutation staffuserpermissionupdate{
+  StaffUserUpdatePermission(input:{
+  addPermissions:[MANAGE_SETTINGS,MANAGE_CHECKOUTS],
+  email:"sanket.j@itindia.co.in"})
+  {
+    message
+  }
+}
+------------57. For delete staff user------------------------
+mutation deletestaffuser{
+  StaffUserDelete(input:{
+    email:"sanket12.j@itindia.co.in"
+  }){
+    message
+  }
+}
+------------58. For change staff user status ------------------------
+mutation changestaffuserstatus{
+  StaffUserStatusChange(input:{
+    email:"sanket1.j@itindia.co.in"
+    status:true
+  }){
+    message
+  }
+}
+------------59. For change B2C user status ------------------------
+mutation changeb2cuserstatus{
+  B2CUserStatusChange(input:{
+    email:"sanket.j@itindia.co.in"
+    status:true
+  }){
+    message
+  }
+}
+------------60. For change B2B user status ------------------------
+mutation changeb2buserstatus{
+  B2BUserStatusChange(input:{
+    email:"sanket.j@itindia.co.in"
+    status:true
+  }){
+    message
+  }
+}
+------------61. For change Artist user status ------------------------
+mutation changeartiststatus{
+  ArtistStatusChange(input:{
+    email:"sanket.j@itindia.co.in"
+    status:true
+  }){
+    message
+  }
+}
+
+mutation address{
+  addressCreate(input:{
+    firstName:"Sanket"
+    lastName:"Jethava"
+    companyName:"XYZ"
+    streetAddress1:"ABD"
+    streetAddress2:"BDA"
+    city:"AHM"
+    cityArea:"Any"
+    postalCode:"998777"
+    country:IN
+    countryArea:"Asia"
+    phone:"+919988776654"
+  },userId:"VXNlckRldGFpbDoyMw=="){
+    address{
+      id
+      firstName
+      lastName
+    }
+    user{
+      id
+      email
+    }
+  }
+}
+------------62. For set default address ------------------------
+mutation addressSetDefault{
+  addressSetDefault(addressId:"QWRkcmVzczo4",type:SHIPPING,userId:"VXNlcjoyMw=="){
+    user{
+      id
+      firstName
+      lastName
+      email
+      addresses{
+        id
+        firstName
+        lastName
+        companyName
+      }
+    }
+  }
+}
+------------63. For update address details ------------------------
+mutation addup {
+  accountAddressUpdate(
+    id: "QWRkcmVzczo4"
+    input: {
+      firstName: "ASBJ"
+      lastName: "AJSB"
+      companyName: "ABCD"
+      streetAddress1: "AAAEEEA"
+      streetAddress2: "BBBBb"
+      city: "AAAGGG"
+      cityArea: "AADDRR"
+      postalCode: "223231"
+      country: IN
+      countryArea: "aaaa"
+      phone: "1122334455"
+    }
+  ) {
+    address {
+      id
+      firstName
+      lastName
+      companyName
+      streetAddress1
+      streetAddress2
+      city
+      cityArea
+      postalCode
+      country {
+        code
+        country
+      }
+      countryArea
+      phone
+      isDefaultShippingAddress
+      isDefaultBillingAddress
+    }
+  }
+}
+------------64. For create new page of About Us  ------------------------
+mutation page {
+  pageCreate(
+    input: {
+      slug: "AboutUs"
+      title: "About Us"
+      content: "About us"
+      contentJson: "{\"section1\":{\"title\":\"Imagine awesome designs\",\"description\":\"first DESCRIPTION\",\"post_image\":\"first.jpg\",\"youtube_link\":\"youtube.com\"},\"section2\":{\"title\":\"Imagine awesome designs\",\"description\":\"first DESCRIPTION\",\"post_image\":\"first.jpg\"},\"section3\":{\"title\":\"Imagine awesome designs\",\"description\":\"first DESCRIPTION\",\"post_image\":\"first.jpg\",\"button_url\":\"youtube.com\",\"button_title\":\"Button Title\"},\"section4\":{\"title\":\"Imagine awesome designs\",\"data\":[{\"post_image\":\"first.jpg\",\"title\":\"title1\",\"description\":\"description\"},{\"post_image\":\"first.jpg\",\"title\":\"title1\",\"description\":\"description\"},{\"post_image\":\"first.jpg\",\"title\":\"title1\",\"description\":\"description\"}]},\"section5\":{\"slogan1\":\"slogan1\",\"slogan1\":\"slogan1\",\"slogan1\":\"slogan1\"},\"section6\":{\"title\":\"Imagine awesome designs\",\"image1\":\"image1.jpg\"}}"
+      isPublished: true
+      publicationDate: "2021-07-02"
+      seo: { title: "Aboutus", description: "About us" }
+    }
+  ) {
+    page {
+      id
+      seoTitle
+      seoDescription
+      title
+      content
+      contentJson
+      publicationDate
+      slug
+      created
+      privateMetadata {
+        key
+        value
+      }
+      metadata {
+        key
+        value
+      }
+      isPublished
+    }
+  }
+}
+------------65. For create new page of Contact us  ------------------------
+mutation page {
+  pageCreate(
+    input: {
+      slug: "ContactUs"
+      title: "Contact Us"
+      content: "content of Contact Us"
+      contentJson: "{\"contact_mail\":\"contact@999tee.com\",\"contact_phone\":\"+1 987-654-3210\",\"facebook_url\":\"https://www.facebook.com\",\"instagram_url\":\"https://www.instagram.com\",\"linkedin_url\":\"https://www.linkedin.com\",\"twitter_url\":\"https://www.twitter.com\",\"youtube_url\":\"https://www.youtube.com\",\"snapchat_url\":\"https://www.snapchat.com\",\"pintrest_url\":\"https://www.pinterest.com\",\"contact_form_to\":\"contact@999tee.com\",\"map_latlong\":\"1.213456,-1.213456\"}"
+      isPublished: true
+      publicationDate: "2021-07-02"
+      seo: { title: "Contact Us", description: "Contact Us" }
+    }
+  ) {
+    page {
+      id
+      seoTitle
+      seoDescription
+      title
+      content
+      contentJson
+      publicationDate
+      slug
+      created
+      privateMetadata {
+        key
+        value
+      }
+      metadata {
+        key
+        value
+      }
+      isPublished
+    }
+  }
+}
+------------66. For create new page of Terms & Conditions  ------------------------
+# For create terms and condition page
+mutation page {
+  pageCreate(
+    input: {
+      slug: "TermsAndConditions"
+      title: "Terms & Conditions"
+      content: "content of Terms & Conditions page"
+      isPublished: true
+      publicationDate: "2021-07-02"
+      seo: { title: "Terms & Conditions", description: "Terms & Conditions" }
+    }
+  ) {
+    page {
+      id
+      seoTitle
+      seoDescription
+      title
+      content
+      contentJson
+      publicationDate
+      slug
+      created
+      privateMetadata {
+        key
+        value
+      }
+      metadata {
+        key
+        value
+      }
+      isPublished
+    }
+  }
+}
+------------67. For create new page of Privacy Policy  ------------------------
+mutation page {
+  pageCreate(
+    input: {
+      slug: "PrivacyPolicy"
+      title: "Privacy Policy"
+      content: "content of Privacy Policy"
+      isPublished: true
+      publicationDate: "2021-07-02"
+      seo: { title: "Privacy Policy", description: "Privacy Policy" }
+    }
+  ) {
+    page {
+      id
+      seoTitle
+      seoDescription
+      title
+      content
+      contentJson
+      publicationDate
+      slug
+      created
+      privateMetadata {
+        key
+        value
+      }
+      metadata {
+        key
+        value
+      }
+      isPublished
+    }
+  }
+}
+------------68. For update page details  ------------------------
+mutation pageupdate {
+  pageUpdate(
+    id: "UGFnZTo1"
+    input: {
+      slug: "ContactUs"
+      title: "Contact Us"
+      content: "content of Contact Us"
+      contentJson: "{\"contact_mail\":\"contact@999tee.com\",\"contact_phone\":\"+1 987-654-3210\",\"facebook_url\":\"https://www.facebook.com\",\"instagram_url\":\"https://www.instagram.com\",\"linkedin_url\":\"https://www.linkedin.com\",\"twitter_url\":\"https://www.twitter.com\",\"youtube_url\":\"https://www.youtube.com\",\"snapchat_url\":\"https://www.snapchat.com\",\"pintrest_url\":\"https://www.pinterest.com\",\"contact_form_to\":\"contact@999tee.com\",\"map_latlong\":\"1.213456,-1.213456\"}"
+      isPublished: true
+      publicationDate: "2021-07-02"
+      seo: { title: "Contact Us", description: "Contact Us" }
+    }
+  ) {
+    page {
+      id
+      seoTitle
+      seoDescription
+      title
+      content
+      contentJson
+      publicationDate
+      slug
+      created
+      privateMetadata {
+        key
+        value
+      }
+      metadata {
+        key
+        value
+      }
+      isPublished
+    }
+  }
+}
+------------69. For create page of artist info ------------------------
+mutation page {
+  pageCreate(
+    input: {
+      slug: "ArtistInfo"
+      title: "Artist Info"
+      content: "content of Artist Info"
+      isPublished: true
+      contentJson: "{\"section1\":{\"title\":\"Imagine awesome designs\",\"description\":\"first DESCRIPTION\",\"post_image\":\"first.jpg\"},\"section2\":{\"title\":\"Imagine awesome designs\",\"description\":\"first DESCRIPTION\",\"post_image\":\"first.jpg\"},\"section3\":{\"title\":\"Imagine awesome designs\",\"data\":[{\"post_image\":\"first.jpg\",\"title\":\"title1\",\"description\":\"description\"},{\"post_image\":\"first.jpg\",\"title\":\"title1\",\"description\":\"description\"},{\"post_image\":\"first.jpg\",\"title\":\"title1\",\"description\":\"description\"}]},\"section4\":{\"title\":\"Imagine awesome designs\",\"description\":\"first DESCRIPTION\",\"post_image\":\"first.jpg\"},\"section5\":{\"title\":\"Imagine awesome designs\",\"description\":\"first DESCRIPTION\",\"artist_name1\":\"artist1\",\"artist_name2\":\"artist2\",\"artist_name3\":\"artist3\",\"artist_name4\":\"artist4\"}}"
+      publicationDate: "2021-07-02"
+      seo: { title: "Privacy Policy", description: "Privacy Policy" }
+    }
+  ) {
+    page {
+      id
+      seoTitle
+      seoDescription
+      title
+      content
+      contentJson
+      publicationDate
+      slug
+      created
+      privateMetadata {
+        key
+        value
+      }
+      metadata {
+        key
+        value
+      }
+      isPublished
+    }
+  }
+}

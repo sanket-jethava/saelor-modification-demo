@@ -1,0 +1,47 @@
+---------1. For send job proposal ---------
+mutation{
+  JobApplicationCreate(input:{
+    firstName: "Sanket",
+    lastName:"Jethava",
+    email:"sanketjethava@gmail.com",
+    phoneNumber:"8200255741",
+    resumeLink:"firstresume.pdf",
+    companyName:"Yudiz Solutions Pvt. Ltd.",
+    currentCtc:"50000",
+    expectedCtc:"60000",
+    noticePeriod:"1 Month",
+    jobTitle:" Python ML Developer"
+    message:"I give my best."
+  }){
+    message
+  }
+}
+---------2. For add new shipping and billing address ---------
+mutation addNewAddress {
+  addNewAddress(
+    input: {
+      userId: "VXNlckRldGFpbDoyNQ=="
+      firstName: "Dhiraj"
+      country: BE
+      countryCode: "62"
+      phone: "85651156602"
+      address: "35 new"
+      state: "Guj"
+      city: "Meh"
+      zipCode: "384002"
+      typeOfAddress: "Home"
+      billingIsSame: false
+      firstNameS: "Smiti"
+      countryS: BE
+      countryCodeS: "62"
+      phoneS: "85651156612"
+      addressS: "35 new hai ye usse"
+      stateS: "Guj"
+      cityS: "Meh"
+      zipCodeS: "384002"
+      typeOfAddressS: "office"
+    }
+  ) {
+    message
+  }
+}

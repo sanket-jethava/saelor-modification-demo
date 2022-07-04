@@ -1,0 +1,16 @@
+---------1. For Profile Setup and update --------------
+mutation{
+  artistProfileSetup(input:{
+    email:"dhiraj.b@itindia.co.in",
+    profilePicture:"image01212.jpg",
+    dribbleLink:"sanket_jethava",
+    behanceLink:"sanket_jethava",
+    facebookLink:"sanket_jethava",
+    twitterLink:"sanket_jethava",
+    instagramLink:"sanket_jethava",
+    bio:"Artist",
+    upiId:"sanket.j@icici"
+  }){
+    message
+  }
+}

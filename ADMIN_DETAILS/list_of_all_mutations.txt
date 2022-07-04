@@ -1,0 +1,69 @@
+1. For Add User
+2. For Add B2B User
+3. For add artist
+4. For manage B2B user request
+5. For Create new package for B2B user
+6. For delete B2B user
+7. For delete B2C user
+8. For delete Artist user
+9. For Delete Package by package name
+10. For create new marketing banner
+11. For delete marketing banner
+12. For change banner status
+13. For add new promotion banner
+14. For delete promotion banner
+15. For change promotion banner status
+16. For create new blog
+17. For delete blog
+18. For change status of blog
+19. For edit blog
+20. For create a new job
+21. For delete a job
+22. For update a job
+23. For accept and reject job application
+24. For add new category
+25. For create new warehouse
+26. For category delete
+27. For category update
+28. For update warehouse details
+29. For create product type
+30. For add new attribute from admin
+31. For add new attribute value
+32. For update(edit) attribute from admin
+33. For update(edit) attribute value
+34. For delete attribute
+35. For delete attribute value
+36. For add new product
+37. For create a new collection
+38. For update collection
+39. For delete collection
+40. For add product to collection
+41. For delete product from collection
+42. For assign product image with product
+43. For update product image with product
+44. For delete product image with product
+45. For assign variant image with product
+46. For unassign variant image with product
+47. For update product details
+48. For delete product
+49. For create voucher
+50. For update voucher
+51. For delete voucher
+52. Add Catalog to Voucher(Add products, Add Category ,Add Collection)
+53. Remove Catalog to Voucher(Remove products, Remove Category ,Remove Collection)
+54. For create staff user
+55. For update staff user profile details
+56. For update staff user permission
+57. For delete staff user
+58. For change staff user status
+59. For change B2C user status
+60. For change B2B user status
+61. For change Artist user status
+62. For set default address
+63. For update address details
+64. For create new page CMS
+65. For create new page of Contact us
+66. For create new page of Terms & Conditions
+67. For create new page of Privacy Policy
+68. For update page details
+69. For create page of artist info

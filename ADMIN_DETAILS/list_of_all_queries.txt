@@ -1,0 +1,37 @@
+1. Get User Details by Email id
+2. Get User Details by User id
+3. Fetch All Artists Details
+4. Fetch All B2B user Details
+5. Fetch All Staff user Details
+6. Get user login Summary
+7. fetch all B2C user details
+8. For fetch all B2B user requests
+9. For fetch all B2B user package details
+10. For get artist social media details by social media link id
+11. For fetch all banners details
+12. For fetch all promotion banner
+13. For fetch all blog details
+14. For view particular blog detail
+15. For view particular job detail
+16. For view all job detail
+17. For fetch all job applications details
+18. For fetch job application details
+19. For fetch all categories below level 2 
+20. For fetch all category and sub category details
+21. For view particular warehouse details
+22. For fetch all warehouse details
+23. For fetch particular category details by slug or by id
+24. For fetch attributes
+25. For fetch all attribute values
+26. For fetch particular attribute values by id
+27. For fetch particular attribute  by id
+28. For fetch all collections
+29. For fetch particular collections by id
+30. Fetch particular collection by slug
+31. Fetch product variants details
+32. For fetch particular discount voucher by id
+33. For fetch all discount vouchers
+34. For fetch address details
+35. For fetch particular page detail by id
+36. For fetch particular page detail by slug
+37. For fetch all page detail

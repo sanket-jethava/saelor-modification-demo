@@ -1,0 +1,739 @@
+-----------------1. Get User Details by Email id---------------
+
+query{
+  userDetails(email:"sanket.j@itindia.co.in"){
+   isArtist
+    availableToken
+    panNumber
+    gstNumber
+    gender
+    packageId
+    phonenumber
+    isLoginwithGoogle
+    isLoginwithFacebook
+    dateOfBirth
+    email
+    firstName
+    lastName
+    lastLogin
+    isSuperuser
+    privateMetadata
+    metadata
+    jwtTokenKey
+    avatar
+    dateJoined
+    note
+    isActive
+    isStaff
+  }
+}
+-----------------2. Get User Details by User id---------------
+query{
+  userDetails(id:15){
+    isArtist
+    availableToken
+    panNumber
+    gstNumber
+    gender
+    packageId
+    phonenumber
+    isLoginwithGoogle
+    isLoginwithFacebook
+    dateOfBirth
+    email
+    firstName
+    lastName
+    lastLogin
+    isSuperuser
+    privateMetadata
+    metadata
+    jwtTokenKey
+    avatar
+    dateJoined
+    note
+    isActive
+    isStaff
+  }
+}
+-----------------3. Fetch All Artists Details---------------
+query{
+  allArtistsDetails{
+    phonenumber
+    email
+    firstName
+    lastName
+    isActive
+  }
+}
+
+-----------------4. Fetch All B2B user Details---------------
+query{
+  allB2bUserDetails{
+    phonenumber
+    email
+    firstName
+    lastName
+    isActive
+    
+  }
+}
+
+-----------------5. Fetch All Staff user Details---------------
+query{
+  allStaffDetails{
+    phonenumber
+    email
+    firstName
+    lastName
+    isActive  
+  }
+}
+
+-----------------6. Get user login Summary---------------
+query{
+  getLoginSumaary(id:15){
+    date
+    loginTime
+    logoutTime
+    deviceType
+  }
+}
+
+-----------------7. fetch all B2C user details---------------
+query{
+   allB2cUserDetails{
+    phonenumber
+    email
+    firstName
+    lastName
+    isActive  
+   }
+}
+-----------------8. For fetch all B2B user requests---------------
+query{
+allB2bUserRequestDetails{
+  firstName
+  lastName
+  email
+  phonenumber
+ }
+}
+-----------------9. For fetch all B2B user package details---------------
+query{
+  allB2bUserPackageDetails{
+    title
+    description
+    price
+    documentLink
+    dateCreated
+    isActive
+  }
+}
+---------10. For get artist social media details by social media link id --------------
+query{
+artistSocialMediaDetails(id:1){
+dribbleLink
+behanceLink
+facebookLink
+instagramLink
+twitterLink
+}
+}
+---------11. For fetch all banners details --------------
+
+query{
+  allBannerDetails{
+    bannerImage
+    title
+    subTitle
+    description
+    status
+  }
+}
+---------12. For fetch all promotion banner --------------
+query{
+  allPromotionBannerDetails{
+    bannerImage
+    title
+    fromDate
+    toDate
+    status
+  }
+}
+---------13. For fetch all blog details --------------
+query{
+  allBlogDetails{
+    blogCoverImage
+    title
+    description
+    postDate
+    status
+  }
+}
+---------14. For view particular blog detail --------------
+query{
+viewBlogDetails(title:"First Blog"){
+blogCoverImage
+title
+description
+postDate
+status
+}
+}
+---------15. For view particular job detail --------------
+query{
+  viewJobDetails(title:"Python Developer"){
+    jobTitle
+    requiredExperience
+    jobDescription
+    postDate
+    status
+  }
+}
+---------16. For view all job detail --------------
+query{
+  allJobDetails{
+    jobTitle
+    requiredExperience
+    jobDescription
+    postDate
+    status
+  }
+}
+---------17. For fetch all job applications details --------------
+query{
+  allJobApplicationDetails{
+   firstName
+   lastName
+   email
+   jobTitle
+  }
+}
+---------18. For fetch job application details --------------
+
+query{
+  jobApplicationDetails(email:"sjethava@gmail.com"){
+    firstName
+    lastName
+    email
+    phoneNumber
+    resumeLink
+    companyName
+    currentCtc
+    expectedCtc
+    noticePeriod
+    message
+  }
+}
+---------19. For fetch all categories details below level 2 --------------
+query{
+  allCategoriesName{
+    id
+    name
+  }
+}
+---------20. For fetch all category and sub category details --------------
+query{
+  allCategories{
+    id
+    name
+    level
+    description
+     parent{
+      id
+      name
+    }
+  }
+}
+---------21. For view particular warehouse details --------------
+
+query{
+  warehouse(id:"V2FyZWhvdXNlOmIwMTU0MDNjLTg5ZTQtNGVjNS1iYWNlLWFhMDgyYTU0ZDQ5Nw=="){
+    id
+    name
+    address{
+  		streetAddress1
+      streetAddress2
+      companyName
+      city
+      cityArea
+      postalCode
+      country{
+        code
+        country
+        vat{
+          countryCode
+          standardRate
+          reducedRates{
+            rate
+            rateType
+          }
+        }
+      }
+      countryArea
+      phone
+    }
+  }
+}
+
+---------22. For fetch all warehouse details --------------
+query{
+  warehouses(first:100){
+    pageInfo{
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    edges{
+      node{
+        id
+        name
+        address{
+          id
+          streetAddress1
+          streetAddress2
+        }
+        slug
+        attributeCode
+      }
+    }
+  }
+}
+---------23. For fetch particular category details by slug or by id --------------
+
+query{
+  category(slug:"MenTshirt")
+  {
+    id
+    name
+    description
+    descriptionJson
+    slug
+    level
+    parent{
+      id
+      name
+    }
+    children(first:100){
+      pageInfo{
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
+      }
+      edges{
+        node{
+          id
+          name
+           
+        }
+      }
+    }
+  }
+}
+-----------BY ID-----------
+query{
+  category(id:"Q2F0ZWdvcnk6NTQ=")
+  {
+    id
+    name
+    description
+    descriptionJson
+    slug
+    level
+    parent{
+      id
+      name
+    }
+    children(first:100){
+      pageInfo{
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
+      }
+      edges{
+        node{
+          id
+          name
+           
+        }
+      }
+    }
+
+---------24. For fetch attributes --------------
+query {
+  attributes(first: 100) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    edges {
+      node {
+        id
+        name
+        slug
+        attributeCode
+      }
+    }
+  }
+}
+
+---------25. For fetch all attribute values--------------
+query {
+  attributeValues(first: 100) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    edges {
+      node {
+        id
+        name
+        value
+        code
+        attributeId
+      }
+    }
+  }
+}
+---------26. For fetch particular attribute values by id--------------
+query {
+  attributeValue(id: "QXR0cmlidXRlVmFsdWU6MTM=") {
+    id
+    name
+    value
+    code
+    attributeId
+  }
+}
+---------27. For fetch particular attribute  by id--------------
+query {
+  attribute(id: "QXR0cmlidXRlOjEx") {
+    id
+    attributeCode
+    name
+    inputType
+    slug
+  }
+}
+---------28. For fetch all collections--------------
+query q1 {
+  collections(first: 100) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    edges {
+      node {
+        id
+        name
+        description
+        publicationDate
+        slug
+        products(first: 100) {
+        edges {
+          node {
+            id
+            name
+            isPublished
+            }
+          }
+        }
+      }
+    }
+  }
+}
+---------29. For fetch particular collections by id--------------
+query {
+  collection(id:"Q29sbGVjdGlvbjoxMg=="){
+    id
+    name
+    description
+    description
+    slug
+    publicationDate
+    isPublished
+    products(first:100){
+      edges
+      {
+        node{
+          id
+          name
+          isPublished
+        }
+      }
+    }
+  }
+}
+---------30. Fetch particular collection by slug --------------
+query ci {
+  collection(slug: "s_name") {
+    id
+    name
+    description
+    slug
+    publicationDate
+    isPublished
+    products(first: 100) {
+      edges {
+        node {
+          id
+          name
+          isPublished
+        }
+      }
+    }
+  }
+}
+---------31. Fetch product variants details --------------
+query productVariants {
+  productVariants(first: 100) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    edges {
+      node {
+        id
+        name
+        sku
+        color
+        size
+        region
+        images{
+          id
+          alt
+          url
+        }
+        product {
+          id
+          name
+          description
+          isPublished
+          variants {
+            id
+            name
+            sku
+            product {
+              id
+              name
+            }
+          }
+          productType {
+            id
+            name
+            slug
+            hasVariants
+          }
+          slug
+          updatedAt
+          weight {
+            unit
+            value
+          }
+          availableForPurchase
+          attributes {
+            attribute {
+              id
+              name
+            }
+            values {
+              id
+              name
+            }
+          }
+        }
+        trackInventory
+      }
+    }
+  }
+}
+---------32. For fetch particular discount voucher by id --------------
+query qvp {
+  voucher(id: "Vm91Y2hlcjox") {
+    id
+    name
+    type
+    code
+    used
+    status
+    startDate
+    endDate
+    discountValueType
+    discountValue
+    actualPrice
+    categories(first: 100) {
+      edges {
+        node {
+          id
+          name
+        }
+      }
+    }
+    collections(first: 100) {
+      edges {
+        node {
+          id
+          name
+        }
+      }
+    }
+    products(first: 100) {
+      edges {
+        node {
+          id
+        }
+      }
+    }
+    minCheckoutItemsQuantity
+    maxCheckoutItemsQuantity
+  }
+}
+---------33. For fetch all discount vouchers --------------
+query qvv {
+  vouchers(first: 100) {
+    edges {
+      node {
+        id
+        name
+        type
+        code
+        used
+        status
+        startDate
+        endDate
+        discountValueType
+        discountValue
+        actualPrice
+        categories(first: 100) {
+          edges {
+            node {
+              id
+              name
+            }
+          }
+        }
+        collections(first: 100) {
+          edges {
+            node {
+              id
+              name
+            }
+          }
+        }
+        products(first: 100) {
+          edges {
+            node {
+              id
+            }
+          }
+        }
+        minCheckoutItemsQuantity
+        maxCheckoutItemsQuantity
+      }
+    }
+  }
+}
+---------34. For fetch address details --------------
+query addressfetch{
+  address(id:"QWRkcmVzczo4"){
+    id
+    firstName
+    lastName
+    companyName
+    streetAddress1
+    streetAddress2
+    city
+    cityArea
+    phone
+    isDefaultShippingAddress
+    isDefaultBillingAddress
+  }
+}
+---------35. For fetch particular page detail by id --------------
+query aboutuspage{
+  page(id:"UGFnZTo0"){
+    id
+        seoTitle
+        seoDescription
+        title
+        content
+        contentJson
+        publicationDate
+        slug
+        created
+        privateMetadata {
+          key
+          value
+        }
+        metadata {
+          key
+          value
+        }
+        isPublished
+  }
+}
+---------36. For fetch particular page detail by slug --------------
+query aboutuspage{
+  page(slug:"AboutUs"){
+    id
+        seoTitle
+        seoDescription
+        title
+        content
+        contentJson
+        publicationDate
+        slug
+        created
+        privateMetadata {
+          key
+          value
+        }
+        metadata {
+          key
+          value
+        }
+        isPublished
+  }
+}
+---------37. For fetch all page detail --------------
+query pagedetails {
+  pages(first: 100) {
+    edges {
+      node {
+        id
+        seoTitle
+        seoDescription
+        title
+        content
+        contentJson
+        publicationDate
+        slug
+        created
+        privateMetadata {
+          key
+          value
+        }
+        metadata {
+          key
+          value
+        }
+        isPublished
+      }
+    }
+  }
+}
+----------------------------------------------------
+
+
+

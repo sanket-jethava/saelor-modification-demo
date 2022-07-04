@@ -1,0 +1,139 @@
+---------1. For Account Registration / Signup --------------
+mutation{
+  accountRegister(input:{
+    isStaff:false
+    isBuyer:true
+    isArtist:false
+    firstName:"sanket"
+    lastName:"jethava"
+    availableToken:0
+    dateOfBirth:"1998-10-03"
+    redirectUrl:"http://localhost:3000/account-confirm/"
+    email:"sanket.j@itindia.co.in"
+    password:"Sanket@123"
+    panNumber : "asdfghjkqw",
+    gstNumber : "f4frgegdgdgddff",
+    gender :"male",
+    packageId : 1,
+    isLoginwithGoogle :false,
+    isLoginwithFacebook:false
+    phonenumber:"8200255741"
+    countryCode:"+91"
+  }){
+    user{
+      email
+    }
+  }
+}
+
+----------------------2. For Account Confirm [after signup] ----------------------------
+
+mutation{
+confirmAccount(email:"sanket.j@itindia.co.in",token:"amfub5-62f50849fab615fe2cac2e57f141556c")
+  {
+    user{
+      email
+    }
+  }
+}
+
+----------------------3. Login / create token  ----------------------------
+mutation{
+  tokenCreate(email:"sanket.j@itindia.co.in",
+    password:"Sanket@123",
+    deviceType:"Mobile"
+  ){
+    csrfToken
+    refreshToken
+    token
+
+    user{
+      id
+      firstName
+      lastName
+      isActive
+      email
+      avatar{
+        url
+        alt
+      }
+      orders{
+        totalCount
+      }
+    }
+  }
+}
+
+
+NOTE : PLEASE STORE token IN SESSION AND MANAGE IT UNTILL USER CAN LOGGED OUT. 
+       THIS TOKEN IS MENDETORY FOR USER AUTHENTICATION FOR EACH AND EVERY QUERY FIRE AFTER LOGIN.
+----------------------4. password reset request ----------------------------
+
+mutation{
+  requestPasswordReset(email:"sanket.j@itindia.co.in",redirectUrl:"http://localhost:3000/account-reset-password/")
+  {
+    __typename
+  }
+}
+
+----------------------5. set password after reset password request  ----------------------------
+
+mutation{
+  setPassword(email:"sanket.j@itindia.co.in",password:"Sanket@12345",token:"amfw5g-612614bb1168c7bcb7677789199be282")
+  {
+    token
+    refreshToken
+    csrfToken
+    user{
+      id
+      firstName
+      lastName
+      lastLogin
+    }
+  }
+    
+}
+
+----------------------6. Logout / Token Destroy----------------------------
+mutation{
+tokenDestroy(
+  token:"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MjA5MDQ4NzMsImV4cCI6MTYyMDkwNTE3MywidG9rZW4iOiJCQVBXYUxBVmczTWkiLCJlbWFpbCI6InNhbmtldC5qQGl0aW5kaWEuY28uaW4iLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9pZCI6IlZYTmxjam94TlE9PSIsImlzX3N0YWZmIjpmYWxzZX0.iMWYHdm-XHifM-VYTdptttidEyblwb9jyYuaBQA0HB8")
+  {
+  status
+ }
+}
+----------------------7. Send Login OTP----------------------------
+mutation{
+  sendOtp(mobile:"9510321680")
+  {
+    status
+    otp{
+      otp
+      mobile
+    }
+  }
+}
+----------------------8. Verify Login OTP and Logged in----------------------------
+mutation{
+  verifyOtp(mobile:"8200255741",otp:"657909",deviceType:"Mobile"){
+    token
+    refreshToken
+    csrfToken
+    user{
+      email
+      firstName
+    }
+    status
+  }
+}
+
+----------------------9. For change password----------------------------
+mutation{
+  passwordChange(email:"sanket.j@itindia.co.in",newPassword:"NewPassword@123",
+  oldPassword:"Sanket@123"){
+    user{
+      email  
+    }
+    
+  }
+}
